@@ -77,8 +77,10 @@ var cmap = function (buffer, font) {
               id = null;
 
           if (rangeOffset === 0) {
+            //Error 0xFFFF is equal to 65535
             id = (charCode + delta) % 65536;
           } else {
+            //Error 0xFFFF is equal to 65535
             id = (table.read(Type.USHORT, offset + rangeOffset + (charCode - start) * Type.USHORT.sizeof) + delta) % 65536;
           }
 
